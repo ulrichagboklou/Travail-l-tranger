@@ -7,9 +7,7 @@
   <title>Travail à l'Étranger</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -25,10 +23,7 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 25px;
-    }
+    header h1 { margin: 0; font-size: 25px; }
 
     nav {
       background: #052b50;
@@ -69,9 +64,7 @@
       box-shadow: 0 2px 10px #00000012;
     }
 
-    h2 {
-      color: #073b70;
-    }
+    h2 { color: #073b70; }
 
     label {
       display: block;
@@ -88,6 +81,10 @@
       font-size: 15px;
     }
 
+    input[type="checkbox"] {
+      width: auto;
+    }
+
     button {
       width: 100%;
       background: #087b55;
@@ -99,14 +96,6 @@
       font-size: 17px;
       font-weight: bold;
       cursor: pointer;
-    }
-
-    #confirmation {
-      display: none;
-      background: #e5f7eb;
-      padding: 18px;
-      border-radius: 8px;
-      margin-top: 20px;
     }
 
     footer {
@@ -166,19 +155,28 @@
       pour préparer votre candidature.
     </p>
 
-    <form id="applicationForm">
+    <form
+      action="https://formsubmit.co/frankielopez232@gmail.com"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <input type="hidden" name="_subject"
+        value="Nouvelle inscription - Travail à l'Étranger">
+
+      <input type="hidden" name="_template" value="table">
 
       <label>Nom et prénoms</label>
-      <input type="text" name="nom" required>
+      <input type="text" name="Nom et prénoms" required>
 
       <label>Adresse e-mail</label>
       <input type="email" name="email" required>
 
       <label>Numéro WhatsApp</label>
-      <input type="tel" name="telephone" required>
+      <input type="tel" name="Numéro WhatsApp" required>
 
       <label>Pays de destination souhaité</label>
-      <select name="pays" required>
+      <select name="Pays de destination" required>
         <option value="">Choisir un pays</option>
         <option>France</option>
         <option>Canada</option>
@@ -193,7 +191,7 @@
       </select>
 
       <label>Domaine professionnel</label>
-      <select name="domaine" required>
+      <select name="Domaine professionnel" required>
         <option value="">Choisir un domaine</option>
         <option>Chauffeur</option>
         <option>Ménage</option>
@@ -207,7 +205,7 @@
 
       <label>Votre expérience professionnelle</label>
       <textarea
-        name="experience"
+        name="Expérience professionnelle"
         rows="4"
         placeholder="Décrivez votre expérience..."
       ></textarea>
@@ -215,22 +213,23 @@
       <label>Téléverser votre CV</label>
       <input
         type="file"
-        name="cv"
+        name="CV"
         accept=".pdf,.doc,.docx"
       >
 
       <label>Téléverser votre passeport</label>
       <input
         type="file"
-        name="passeport"
+        name="Passeport"
         accept=".pdf,.jpg,.jpeg,.png"
       >
 
       <label>
         <input
           type="checkbox"
+          name="Consentement"
+          value="Accepté"
           required
-          style="width:auto;"
         >
         J'accepte que mes informations soient utilisées
         pour traiter ma demande.
@@ -241,16 +240,6 @@
       </button>
 
     </form>
-
-    <div id="confirmation">
-      <h3>Demande préparée !</h3>
-      <p>
-        Votre formulaire a été rempli.
-        La transmission réelle des informations sera disponible
-        après la configuration du service de réception.
-      </p>
-    </div>
-
   </section>
 
 </main>
@@ -259,18 +248,6 @@
   <p>© 2026 - Travail à l'Étranger</p>
   <p>Service indépendant d'accompagnement administratif.</p>
 </footer>
-
-<script>
-  document.getElementById("applicationForm")
-    .addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      document.getElementById("confirmation").style.display = "block";
-
-      document.getElementById("confirmation")
-        .scrollIntoView({behavior: "smooth"});
-    });
-</script>
 
 </body>
 </html>
